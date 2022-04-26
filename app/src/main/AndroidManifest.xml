@@ -2,7 +2,7 @@
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="net.mm2d.codereader"
+    package="net.mm2d.scanbarcodecounts"
     >
 
     <uses-feature android:name="android.hardware.camera.any" />
@@ -17,7 +17,7 @@
     </queries>
 
     <application
-        android:name=".App"
+        android:name="net.mm2d.scanbarcodecounts.App"
         android:allowBackup="false"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/full_backup_content"
@@ -27,11 +27,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CodeReader"
         tools:ignore="GoogleAppIndexingWarning"
-        >
+        tools:targetApi="s">
         <activity-alias
             android:name=".StartActivity"
             android:exported="true"
-            android:targetActivity=".MainActivity"
+            android:targetActivity="net.mm2d.scanbarcodecounts.MainActivity"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -41,17 +41,16 @@
         </activity-alias>
 
         <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name"
+            android:name="net.mm2d.scanbarcodecounts.MainActivity"
             android:theme="@style/Theme.CodeReader.NoActionBar"
             />
         <activity
-            android:name=".LicenseActivity"
+            android:name="net.mm2d.scanbarcodecounts.LicenseActivity"
             android:label="@string/options_menu_license"
             android:theme="@style/Theme.CodeReader.NoActionBar"
             />
         <activity
-            android:name=".SettingsActivity"
+            android:name="net.mm2d.scanbarcodecounts.SettingsActivity"
             android:label="@string/options_menu_settings"
             android:theme="@style/Theme.CodeReader.NoActionBar"
             />

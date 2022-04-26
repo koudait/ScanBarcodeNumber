@@ -16,7 +16,7 @@ android {
     compileSdk = 31
 
     defaultConfig {
-        applicationId = "net.mm2d.codereader"
+        applicationId = "net.mm2d.scanbarcodecounts"
         minSdk = 23
         targetSdk = 31
         versionCode = versionMajor * 10000 + versionMinor * 100 + versionPatch
@@ -66,9 +66,9 @@ dependencies {
     implementation("com.google.android.play:core:1.10.3")
     implementation("com.google.android.play:core-ktx:1.8.1")
     implementation("androidx.constraintlayout:constraintlayout:2.1.3")
-    implementation("androidx.camera:camera-camera2:1.1.0-beta02")
-    implementation("androidx.camera:camera-lifecycle:1.1.0-beta02")
-    implementation("androidx.camera:camera-view:1.1.0-beta02")
+    implementation("androidx.camera:camera-camera2:1.1.0-beta03")
+    implementation("androidx.camera:camera-lifecycle:1.1.0-beta03")
+    implementation("androidx.camera:camera-view:1.1.0-beta03")
     implementation("androidx.browser:browser:1.4.0")
     implementation("androidx.webkit:webkit:1.4.0")
     implementation("com.google.mlkit:barcode-scanning:17.0.2")
