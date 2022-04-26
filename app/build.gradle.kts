@@ -74,11 +74,6 @@ dependencies {
     implementation("com.google.mlkit:barcode-scanning:17.0.2")
     implementation("com.jakewharton.timber:timber:5.0.1")
 
-    debugImplementation("com.squareup.leakcanary:leakcanary-android:2.8.1")
-    debugImplementation("com.facebook.flipper:flipper:0.136.0")
-    debugImplementation("com.facebook.soloader:soloader:0.10.3")
-    debugImplementation("com.facebook.flipper:flipper-network-plugin:0.136.0")
-    debugImplementation("com.facebook.flipper:flipper-leakcanary2-plugin:0.136.0")
 }
 
 fun isStable(version: String): Boolean {
