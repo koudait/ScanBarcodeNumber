@@ -16,7 +16,7 @@ android {
     compileSdk = 31
 
     defaultConfig {
-        applicationId = "net.mm2d.scanbarcodecounts"
+        applicationId = "net.mobero.scanbarcodecounts"
         minSdk = 23
         targetSdk = 31
         versionCode = versionMajor * 10000 + versionMinor * 100 + versionPatch

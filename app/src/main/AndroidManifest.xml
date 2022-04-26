@@ -2,7 +2,7 @@
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="net.mm2d.scanbarcodecounts"
+    package="net.mobero.scanbarcodecounts"
     >
 
     <uses-feature android:name="android.hardware.camera.any" />
@@ -17,7 +17,7 @@
     </queries>
 
     <application
-        android:name="net.mm2d.scanbarcodecounts.App"
+        android:name="net.mobero.scanbarcodecounts.App"
         android:allowBackup="false"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/full_backup_content"
@@ -31,7 +31,7 @@
         <activity-alias
             android:name=".StartActivity"
             android:exported="true"
-            android:targetActivity="net.mm2d.scanbarcodecounts.MainActivity"
+            android:targetActivity="net.mobero.scanbarcodecounts.MainActivity"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -41,16 +41,16 @@
         </activity-alias>
 
         <activity
-            android:name="net.mm2d.scanbarcodecounts.MainActivity"
+            android:name="net.mobero.scanbarcodecounts.MainActivity"
             android:theme="@style/Theme.CodeReader.NoActionBar"
             />
         <activity
-            android:name="net.mm2d.scanbarcodecounts.LicenseActivity"
+            android:name="net.mobero.scanbarcodecounts.LicenseActivity"
             android:label="@string/options_menu_license"
             android:theme="@style/Theme.CodeReader.NoActionBar"
             />
         <activity
-            android:name="net.mm2d.scanbarcodecounts.SettingsActivity"
+            android:name="net.mobero.scanbarcodecounts.SettingsActivity"
             android:label="@string/options_menu_settings"
             android:theme="@style/Theme.CodeReader.NoActionBar"
             />
