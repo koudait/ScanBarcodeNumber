@@ -57,8 +57,7 @@ class ScanResultAdapter(
     ) : RecyclerView.ViewHolder(binding.root) {
         fun apply(result: ScanResult) {
             binding.resultValue.text = result.value
-            binding.resultType.text = result.type
-            binding.resultFormat.text = result.format
+
         }
     }
 }

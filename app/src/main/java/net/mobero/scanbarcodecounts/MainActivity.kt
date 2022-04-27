@@ -136,16 +136,21 @@ class MainActivity : AppCompatActivity(), PermissionDialog.OnCancelListener {
     }
 
     private fun onDetectCode(codes: List<Barcode>) {
-        codes.forEach {
-            val value = it.rawValue ?: return@forEach
-            val result = ScanResult(
-                value = value,
-                type = it.typeString(),
-                format = it.formatString(),
-                isUrl = it.valueType == Barcode.TYPE_URL
-            )
-            if (viewModel.add(result)) {
-                vibrate()
+        if (codes.isEmpty()) {
+            return
+        }
+        if (codes.size == 1) {
+            codes.forEach {
+                val value = it.rawValue ?: return@forEach
+                val result = ScanResult(
+                    value = value,
+                    type = it.typeString(),
+                    format = it.formatString(),
+                    isUrl = it.valueType == Barcode.TYPE_URL
+                )
+                if (viewModel.add(result)) {
+                    vibrate()
+                }
             }
         }
     }
