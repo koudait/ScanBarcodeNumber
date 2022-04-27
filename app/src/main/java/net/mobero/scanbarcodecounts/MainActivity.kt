@@ -7,6 +7,8 @@ import android.os.Build.VERSION_CODES
 import android.os.Bundle
 import android.os.VibrationEffect
 import android.os.Vibrator
+import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -42,6 +44,7 @@ class MainActivity : AppCompatActivity(), PermissionDialog.OnCancelListener {
     private val settings: Settings by lazy {
         Settings.get()
     }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -136,6 +139,7 @@ class MainActivity : AppCompatActivity(), PermissionDialog.OnCancelListener {
     }
 
     private fun onDetectCode(codes: List<Barcode>) {
+        //val num = findViewById<TextView>(R.id.countView)
         if (codes.isEmpty()) {
             return
         }
