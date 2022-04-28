@@ -139,7 +139,9 @@ class MainActivity : AppCompatActivity(), PermissionDialog.OnCancelListener {
     }
 
     private fun onDetectCode(codes: List<Barcode>) {
-        //val num = findViewById<TextView>(R.id.countView)
+
+        var count: Int = 0
+
         if (codes.isEmpty()) {
             return
         }
@@ -152,10 +154,15 @@ class MainActivity : AppCompatActivity(), PermissionDialog.OnCancelListener {
                     format = it.formatString(),
                     isUrl = it.valueType == Barcode.TYPE_URL
                 )
+                count += 1
+                count++
                 if (viewModel.add(result)) {
                     vibrate()
                 }
             }
+
+
+
         }
     }
 

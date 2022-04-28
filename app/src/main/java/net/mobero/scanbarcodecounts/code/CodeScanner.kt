@@ -25,7 +25,7 @@ class CodeScanner(
     private val scanner: BarcodeScanner = BarcodeScanning.getClient()
     private val analyzer: CodeAnalyzer = CodeAnalyzer(scanner, callback)
     private var camera: Camera? = null
-    val torchState: MutableLiveData<Boolean> = MutableLiveData(false)
+    private val torchState: MutableLiveData<Boolean> = MutableLiveData(false)
 
     init {
         activity.lifecycle.addObserver(
@@ -72,10 +72,4 @@ class CodeScanner(
         }
     }
 
-    fun toggleTorch() {
-        camera?.let {
-            val next = !(torchState.value ?: false)
-            it.cameraControl.enableTorch(next)
-        }
-    }
 }

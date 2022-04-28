@@ -100,7 +100,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/copy_button"
         app:layout_constraintStart_toEndOf="@id/open_button"
-        app:layout_constraintTop_toBottomOf="@id/result_value"
         />
 
     <Button

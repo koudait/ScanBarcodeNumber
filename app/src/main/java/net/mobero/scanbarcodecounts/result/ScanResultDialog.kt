@@ -46,8 +46,6 @@ class ScanResultDialog : DialogFragment() {
             }
         }
         return AlertDialog.Builder(activity)
-            .setTitle(R.string.dialog_title_select_action)
-            .setView(binding.root)
             .create()
     }
 
