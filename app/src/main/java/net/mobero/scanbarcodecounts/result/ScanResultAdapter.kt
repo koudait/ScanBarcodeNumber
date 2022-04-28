@@ -38,6 +38,16 @@ class ScanResultAdapter(
         diff.dispatchUpdatesTo(this)
     }
 
+    fun getItem(value: String):ScanResult?{
+        results.forEach{
+            if(it.value == value){
+                return it
+            }
+        }
+        return null
+    }
+
+
     class DiffCallback(
         private val oldList: List<ScanResult>,
         private val newList: List<ScanResult>

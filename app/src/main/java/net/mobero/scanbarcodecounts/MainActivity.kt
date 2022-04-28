@@ -146,23 +146,24 @@ class MainActivity : AppCompatActivity(), PermissionDialog.OnCancelListener {
             return
         }
         if (codes.size == 1) {
-            codes.forEach {
-                val value = it.rawValue ?: return@forEach
+            val value = codes[0].rawValue ?: return
+            //存在チェック
+            val foundItem = adapter.getItem(value)
+            if (foundItem != null) {
+                //存在する場合、countアップ
+                foundItem.count++
+            } else {
+                //存在しない場合、リストに追加。
                 val result = ScanResult(
                     value = value,
-                    type = it.typeString(),
-                    format = it.formatString(),
-                    isUrl = it.valueType == Barcode.TYPE_URL
+                    type = codes[0].typeString(),
+                    format = codes[0].formatString(),
+                    isUrl = codes[0].valueType == Barcode.TYPE_URL,
+                    count = 1
                 )
-                count += 1
-                count++
-                if (viewModel.add(result)) {
-                    vibrate()
-                }
+                viewModel.add(result)
             }
-
-
-
+            vibrate()
         }
     }
 

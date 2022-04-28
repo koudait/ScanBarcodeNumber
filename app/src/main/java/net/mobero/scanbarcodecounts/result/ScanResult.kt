@@ -10,4 +10,5 @@ data class ScanResult(
     val type: String,
     val format: String,
     val isUrl: Boolean,
+    var count: Int
 ) : Parcelable
