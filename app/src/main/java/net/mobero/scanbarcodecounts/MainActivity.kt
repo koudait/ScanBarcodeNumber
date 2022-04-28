@@ -148,10 +148,11 @@ class MainActivity : AppCompatActivity(), PermissionDialog.OnCancelListener {
         if (codes.size == 1) {
             val value = codes[0].rawValue ?: return
             //存在チェック
-            val foundItem = adapter.getItem(value)
+            val foundItem =  viewModel.get(value)
             if (foundItem != null) {
                 //存在する場合、countアップ
                 foundItem.count++
+                adapter.notifyDataSetChanged()
             } else {
                 //存在しない場合、リストに追加。
                 val result = ScanResult(
