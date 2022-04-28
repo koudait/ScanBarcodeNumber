@@ -139,9 +139,9 @@ class MainActivity : AppCompatActivity(), PermissionDialog.OnCancelListener {
     }
 
     private fun onDetectCode(codes: List<Barcode>) {
-
-        var count: Int = 0
-
+        if (codeScanner.isStop) {
+            return
+        }
         if (codes.isEmpty()) {
             return
         }
@@ -165,6 +165,7 @@ class MainActivity : AppCompatActivity(), PermissionDialog.OnCancelListener {
             }
             vibrate()
         }
+        codeScanner.changeInterval()
     }
 
     private fun expandList() {

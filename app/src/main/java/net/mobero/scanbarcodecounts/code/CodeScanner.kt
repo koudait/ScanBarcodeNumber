@@ -1,6 +1,8 @@
 
 package net.mobero.scanbarcodecounts.code
 
+import android.os.Handler
+import android.os.Looper
 import androidx.activity.ComponentActivity
 import androidx.camera.core.*
 import androidx.camera.lifecycle.ProcessCameraProvider
@@ -19,6 +21,7 @@ import java.util.concurrent.Executors
 class CodeScanner(
     private val activity: ComponentActivity,
     private val previewView: PreviewView,
+
     callback: (List<Barcode>) -> Unit
 ) {
     private val workerExecutor: ExecutorService = Executors.newSingleThreadExecutor()
@@ -26,7 +29,7 @@ class CodeScanner(
     private val analyzer: CodeAnalyzer = CodeAnalyzer(scanner, callback)
     private var camera: Camera? = null
     private val torchState: MutableLiveData<Boolean> = MutableLiveData(false)
-
+    var isStop:Boolean = false
     init {
         activity.lifecycle.addObserver(
             LifecycleEventObserver { _, event ->
@@ -43,6 +46,14 @@ class CodeScanner(
         future.addListener({
             setUp(future.get())
         }, ContextCompat.getMainExecutor(activity))
+    }
+
+    fun changeInterval(){
+        isStop = true
+        Handler(Looper.getMainLooper()).postDelayed(
+            {
+            isStop = false
+            }, 3000)
     }
 
     private fun setUp(provider: ProcessCameraProvider) {
